@@ -1,3 +1,7 @@
+
+SMAObjectFetchController 
+========================
+
 The purpose of this library is to provide an easier way to communicate using REST API.
 The class should be initialized using the designated initializer.
 The prototype is a URL as string. The class saves it for re-usability.
@@ -8,8 +12,8 @@ The results are JSON, wrapped in an instance of NSDictionary. It comes back asyn
 The caller should adopt the delegation to be notified.
  
 Example:
- 
- 
+-------- 
+``` objective-c
 //  This a Google custom search REST API
 //  https://www.googleapis.com/customsearch/v1?key=INSERT-YOUR-KEY&cx=013036536707430787589:_pqjad5hr1a&q=flowers&alt=json
 //  Most of the string is constant, only query changes (flowers)
@@ -29,5 +33,5 @@ NSArray *parameters = [NSArray arrayWithObjects:@"red", @"flowers", nil];
 NSDictionary *results = [controller fetchedResultsWithParameters:parameters];
  
 [controller release];
- 
+```
  
