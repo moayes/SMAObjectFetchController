@@ -16,6 +16,7 @@
 		5B9EAB0215DECF9100129105 /* libSMAObjectFetchController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B9EAAE915DECF9100129105 /* libSMAObjectFetchController.a */; };
 		5B9EAB0815DECF9100129105 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5B9EAB0615DECF9100129105 /* InfoPlist.strings */; };
 		5B9EAB0B15DECF9100129105 /* SMAObjectFetchControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9EAB0A15DECF9100129105 /* SMAObjectFetchControllerTests.m */; };
+		5BB1257E15E165CB00D0E778 /* SMAJSONSerializationOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB1257D15E165CB00D0E778 /* SMAJSONSerializationOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		5B9EAB0715DECF9100129105 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5B9EAB0915DECF9100129105 /* SMAObjectFetchControllerTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMAObjectFetchControllerTests.h; sourceTree = "<group>"; };
 		5B9EAB0A15DECF9100129105 /* SMAObjectFetchControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMAObjectFetchControllerTests.m; sourceTree = "<group>"; };
+		5BB1257C15E165CB00D0E778 /* SMAJSONSerializationOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMAJSONSerializationOperation.h; sourceTree = "<group>"; };
+		5BB1257D15E165CB00D0E778 /* SMAJSONSerializationOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMAJSONSerializationOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +116,8 @@
 			children = (
 				5B9EAAF115DECF9100129105 /* SMAObjectFetchController.h */,
 				5B9EAAF315DECF9100129105 /* SMAObjectFetchController.m */,
+				5BB1257C15E165CB00D0E778 /* SMAJSONSerializationOperation.h */,
+				5BB1257D15E165CB00D0E778 /* SMAJSONSerializationOperation.m */,
 				5B9EAAEF15DECF9100129105 /* Supporting Files */,
 			);
 			path = SMAObjectFetchController;
@@ -244,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B9EAAF415DECF9100129105 /* SMAObjectFetchController.m in Sources */,
+				5BB1257E15E165CB00D0E778 /* SMAJSONSerializationOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +400,7 @@
 				5B9EAB1015DECF9100129105 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5B9EAB1115DECF9100129105 /* Build configuration list for PBXNativeTarget "SMAObjectFetchControllerTests" */ = {
 			isa = XCConfigurationList;
@@ -402,6 +409,7 @@
 				5B9EAB1315DECF9100129105 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
