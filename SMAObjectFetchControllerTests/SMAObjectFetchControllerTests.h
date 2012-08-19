@@ -7,6 +7,8 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
+#import "SMAObjectFetchController.h"
+
 
 @interface SMAObjectFetchControllerTests : SenTestCase
 
