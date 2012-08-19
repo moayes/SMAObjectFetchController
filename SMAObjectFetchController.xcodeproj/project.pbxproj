@@ -17,6 +17,7 @@
 		5B9EAB0815DECF9100129105 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5B9EAB0615DECF9100129105 /* InfoPlist.strings */; };
 		5B9EAB0B15DECF9100129105 /* SMAObjectFetchControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9EAB0A15DECF9100129105 /* SMAObjectFetchControllerTests.m */; };
 		5BB1257E15E165CB00D0E778 /* SMAJSONSerializationOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB1257D15E165CB00D0E778 /* SMAJSONSerializationOperation.m */; };
+		5BB125C515E16CDE00D0E778 /* SMAJSONSerializationOperation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5BB1257C15E165CB00D0E778 /* SMAJSONSerializationOperation.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
+				5BB125C515E16CDE00D0E778 /* SMAJSONSerializationOperation.h in CopyFiles */,
 				5B9EAAF215DECF9100129105 /* SMAObjectFetchController.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
