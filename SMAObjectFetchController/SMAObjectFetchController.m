@@ -13,6 +13,7 @@
 
 @property (nonatomic, copy) NSString* prototype; // to hold a string as prototype, with %@ placeholders
 @property (nonatomic, retain) NSMutableData *receivedData; // to hold downloaded data from URL
+@property (nonatomic, retain) NSOperationQueue *operationQueue; // to process JSON in the background thread
 
 @end
 
@@ -20,6 +21,12 @@
 @implementation SMAObjectFetchController
 @synthesize prototype = _prototype;
 @synthesize receivedData = _receivedData;
+@synthesize operationQueue = _operationQueue;
+
+
+
+#pragma mark -
+#pragma mark - Life cycle
 
 
 - (void)dealloc {
@@ -29,8 +36,16 @@
 }
 
 
-#pragma mark -
-#pragma mark - Designated initializer and header implemetation
+- (NSOperationQueue *)operationQueue {
+    if (!_operationQueue) {
+        
+        _operationQueue = [[NSOperationQueue alloc] init];
+        _operationQueue.name = @"JSON Processing Queue";
+        _operationQueue.maxConcurrentOperationCount = 1;
+    }
+    return _operationQueue;
+}
+
 
 - (id)initWithPrototypeURLString:(NSString *)string {
     if (self = [super init]) {
@@ -102,23 +117,12 @@
 
 - (void)processReceivedData {
     
-    // Create JSON object
+    // Process data
     
-    NSError *error = nil;
-    id json = [NSJSONSerialization JSONObjectWithData:self.receivedData options:NSJSONReadingMutableContainers error:&error];
+    SMAJSONSerializationOperation *operation = [[SMAJSONSerializationOperation alloc] initWithData:self.receivedData delegate:self];
+    [self.operationQueue addOperation:operation];
+    [operation release];
     
-    if (error) {
-        
-        // Report error
-        
-        [self.delegate controller:self didFail:error];
-        
-    } else {
-        
-        // Finish
-        
-        [self.delegate controller:self fetchedResults:json];
-    }
 }
 
 
@@ -166,6 +170,20 @@
     
     // release the connection
     [connection release];
+}
+
+
+#pragma mark -
+#pragma mark - SMAJSONSerialization operation delegate
+
+
+- (void)operationDidFinish:(SMAJSONSerializationOperation *)operation {
+    
+    if (operation.error) {
+        [self.delegate controller:self didFail:operation.error];
+    } else {
+        [self.delegate controller:self didFinishWithFetchedResults:operation.results];
+    }
 }
 
 @end
